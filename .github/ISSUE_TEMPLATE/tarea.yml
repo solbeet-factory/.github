@@ -1,0 +1,33 @@
+name: Tarea tecnica
+description: CI, infra, deuda, docs, migraciones. Nadie de negocio lo nota, pero hay que hacerlo.
+title: "chore: "
+labels: ["type:chore", "status:triage"]
+body:
+  - type: textarea
+    id: que
+    attributes:
+      label: Que hay que hacer y por que
+    validations:
+      required: true
+  - type: textarea
+    id: hecho
+    attributes:
+      label: Como sabemos que esta hecho
+      value: |
+        - [ ] 
+    validations:
+      required: true
+  - type: input
+    id: repos
+    attributes:
+      label: Repos / servicios que toca
+    validations:
+      required: true
+  - type: dropdown
+    id: tamano
+    attributes:
+      label: Tamano (referencia = horas de Santiago con Claude Code)
+      description: XS ≤0.5h · S ≤2h · M ≤4h · L ≤1 dia · XL >1 dia
+      options: [XS, S, M, L, XL]
+    validations:
+      required: true

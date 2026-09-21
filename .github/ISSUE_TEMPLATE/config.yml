@@ -1,0 +1,7 @@
+# Defaults de organizacion: este archivo vive en solbeet-factory/.github y
+# aplica a todos los repos que no tengan su propio .github/ISSUE_TEMPLATE.
+blank_issues_enabled: false
+contact_links:
+  - name: Flujo de trabajo (vault)
+    url: https://github.com/solbeet-factory/KnowledgeBase/blob/main/20-Proyectos/Flujo%20de%20trabajo%20-%20Issues%2C%20PRs%20y%20estimacion.md
+    about: Como se escribe un issue, que significan las labels y como se estima.

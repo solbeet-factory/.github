@@ -1,0 +1,61 @@
+name: Feature
+description: Algo nuevo o un cambio de comportamiento que un usuario o un servicio va a notar.
+title: "feat: "
+labels: ["type:feat", "status:triage"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema / para quien
+      description: Que le pasa hoy a quien (vendedora, admin, agente, otro servicio). Sin solucion todavia.
+      placeholder: "Las vendedoras de Newfly no ven en Mi dia los leads que pasaron a «urgente»..."
+    validations:
+      required: true
+  - type: textarea
+    id: resultado
+    attributes:
+      label: Resultado esperado
+      description: Como se ve el sistema cuando esta hecho. Una frase por comportamiento.
+    validations:
+      required: true
+  - type: textarea
+    id: aceptacion
+    attributes:
+      label: Criterios de aceptacion
+      description: Lista verificable. Si no se puede comprobar, no es un criterio.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: input
+    id: repos
+    attributes:
+      label: Repos / servicios que toca
+      placeholder: "IAIARS, Lia-Frontend"
+    validations:
+      required: true
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      options:
+        - P1 — bloquea una tarea primaria o pierde datos
+        - P2 — degrada materialmente una tarea primaria
+        - P3 — friccion recurrente o inconsistencia
+        - P4 — detalle menor
+    validations:
+      required: true
+  - type: dropdown
+    id: tamano
+    attributes:
+      label: Tamano (referencia = horas de Santiago con Claude Code)
+      description: XS ≤0.5h · S ≤2h · M ≤4h · L ≤1 dia · XL >1 dia (partir en sub-issues antes de asignar)
+      options: [XS, S, M, L, XL]
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto tecnico (opcional)
+      description: Archivos, endpoints, tablas, links a Langfuse/Sentry, decisiones ya tomadas. Sin secretos.

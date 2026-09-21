@@ -1,0 +1,54 @@
+name: Bug
+description: Algo que hoy funciona distinto a como deberia.
+title: "fix: "
+labels: ["type:bug", "status:triage"]
+body:
+  - type: textarea
+    id: repro
+    attributes:
+      label: Como reproducirlo
+      description: Pasos, cuenta/tenant, lead o trace de ejemplo. Sin datos personales de clientes.
+    validations:
+      required: true
+  - type: textarea
+    id: observado
+    attributes:
+      label: Que pasa
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Que deberia pasar
+    validations:
+      required: true
+  - type: input
+    id: evidencia
+    attributes:
+      label: Evidencia
+      placeholder: "link a Sentry / Langfuse / captura"
+  - type: input
+    id: repos
+    attributes:
+      label: Repos / servicios que toca
+    validations:
+      required: true
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad
+      options:
+        - P1 — bloquea una tarea primaria o pierde datos
+        - P2 — degrada materialmente una tarea primaria
+        - P3 — friccion recurrente o inconsistencia
+        - P4 — detalle menor
+    validations:
+      required: true
+  - type: dropdown
+    id: tamano
+    attributes:
+      label: Tamano (referencia = horas de Santiago con Claude Code)
+      description: XS ≤0.5h · S ≤2h · M ≤4h · L ≤1 dia · XL >1 dia
+      options: [XS, S, M, L, XL]
+    validations:
+      required: true
