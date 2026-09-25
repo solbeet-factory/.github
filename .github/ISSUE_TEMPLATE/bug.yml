@@ -48,7 +48,7 @@ body:
     id: tamano
     attributes:
       label: Tamano (referencia = horas de Santiago con Claude Code)
-      description: XS ≤0.5h · S ≤2h · M ≤4h · L ≤1 dia · XL >1 dia
+      description: XS ≤15 min · S ≤30 min · M ≤1 h · L ≤2 h · XL >2 h
       options: [XS, S, M, L, XL]
     validations:
       required: true
