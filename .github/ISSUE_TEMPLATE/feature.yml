@@ -12,6 +12,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: research
+    attributes:
+      label: Research / hallazgos
+      description: Que dicen los datos. Uso actual (metricas, logs, Sentry, Langfuse, chats) y lo de afuera (docs, como lo resuelven otros).
+    validations:
+      required: true
+  - type: textarea
     id: resultado
     attributes:
       label: Resultado esperado
@@ -26,6 +33,24 @@ body:
       value: |
         - [ ] 
         - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: monitoreo
+    attributes:
+      label: Monitoreo
+      description: Como sabemos si anda en produccion. Que mirar, donde y cuantos dias (la observacion post-deploy dura 7).
+    validations:
+      required: true
+  - type: dropdown
+    id: salida
+    attributes:
+      label: Salida
+      description: Segun la criticidad. Si puede romper algo que ya se usa, flag.
+      options:
+        - flag — se prende por cuenta/tenant
+        - gradual — por partes (sucursal, porcentaje)
+        - completo — sale para todos
     validations:
       required: true
   - type: input
@@ -54,6 +79,12 @@ body:
       options: [XS, S, M, L, XL]
     validations:
       required: true
+  - type: input
+    id: eta
+    attributes:
+      label: ETA
+      description: Fecha comprometida, si la hay (opcional).
+      placeholder: "YYYY-MM-DD"
   - type: textarea
     id: contexto
     attributes:

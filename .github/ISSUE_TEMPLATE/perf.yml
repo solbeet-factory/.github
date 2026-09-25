@@ -1,25 +1,14 @@
-name: Bug
-description: Algo que hoy funciona distinto a como deberia.
-title: "fix: "
-labels: ["type:bug", "status:triage"]
+name: Optimizacion
+description: Lo mismo, mas rapido o mas barato (latencia, costo, consumo).
+title: "perf: "
+labels: ["type:perf", "status:triage"]
 body:
   - type: textarea
-    id: repro
+    id: problema
     attributes:
-      label: Como reproducirlo
-      description: Pasos, cuenta/tenant, lead o trace de ejemplo. Sin datos personales de clientes.
-    validations:
-      required: true
-  - type: textarea
-    id: observado
-    attributes:
-      label: Que pasa
-    validations:
-      required: true
-  - type: textarea
-    id: esperado
-    attributes:
-      label: Que deberia pasar
+      label: Problema / para quien
+      description: Que le pasa hoy a quien (vendedora, admin, agente, otro servicio). Sin solucion todavia.
+      placeholder: "Las vendedoras de Newfly no ven en Mi dia los leads que pasaron a «urgente»..."
     validations:
       required: true
   - type: textarea
@@ -29,11 +18,23 @@ body:
       description: Que dicen los datos. Uso actual (metricas, logs, Sentry, Langfuse, chats) y lo de afuera (docs, como lo resuelven otros).
     validations:
       required: true
-  - type: input
-    id: evidencia
+  - type: textarea
+    id: resultado
     attributes:
-      label: Evidencia
-      placeholder: "link a Sentry / Langfuse / captura"
+      label: Resultado esperado
+      description: Como se ve el sistema cuando esta hecho. Una frase por comportamiento.
+    validations:
+      required: true
+  - type: textarea
+    id: aceptacion
+    attributes:
+      label: Criterios de aceptacion
+      description: Lista verificable. Si no se puede comprobar, no es un criterio.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
   - type: textarea
     id: monitoreo
     attributes:
@@ -56,6 +57,7 @@ body:
     id: repos
     attributes:
       label: Repos / servicios que toca
+      placeholder: "IAIARS, Lia-Frontend"
     validations:
       required: true
   - type: dropdown
@@ -73,7 +75,7 @@ body:
     id: tamano
     attributes:
       label: Tamano (referencia = horas de Santiago con Claude Code)
-      description: XS ≤15 min · S ≤30 min · M ≤1 h · L ≤2 h · XL >2 h
+      description: XS ≤15 min · S ≤30 min · M ≤1 h · L ≤2 h · XL >2 h (partir en sub-issues antes de asignar)
       options: [XS, S, M, L, XL]
     validations:
       required: true
@@ -83,3 +85,8 @@ body:
       label: ETA
       description: Fecha comprometida, si la hay (opcional).
       placeholder: "YYYY-MM-DD"
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto tecnico (opcional)
+      description: Archivos, endpoints, tablas, links a Langfuse/Sentry, decisiones ya tomadas. Sin secretos.
