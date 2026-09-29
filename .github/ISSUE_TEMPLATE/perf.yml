@@ -60,6 +60,18 @@ body:
       placeholder: "IAIARS, Lia-Frontend"
     validations:
       required: true
+  - type: textarea
+    id: documentacion
+    attributes:
+      label: Documentacion
+      description: "Parte del DoD. Lo que hay que dejar al dia en el vault (KnowledgeBase) antes de cerrar. Borra las lineas que no apliquen; si no aplica nada, deja una sola con «docs: no aplica, motivo». /flujo:cerrar frena si quedan sin tildar."
+      value: |
+        - [ ] Vault (KnowledgeBase): `50-Agent-Context-Packs/<repo>.md` al dia — responsabilidades, endpoints y contratos, env vars (solo nombres), comandos, riesgos, y `Base:` al sha del merge
+        - [ ] Si cambio un flujo entre servicios o un dominio: `10-Arquitectura/` y `30-Dominios/`; si cambio como se opera o se despliega: `40-Runbooks/`
+        - [ ] Si toca IAIARS, CAIA, parlant-service o lia-quality: `agentic-os/plugin/docs/kernel.md` refleja el contrato nuevo
+        - [ ] PR del vault linkeado aca
+    validations:
+      required: true
   - type: dropdown
     id: prioridad
     attributes:
@@ -75,7 +87,7 @@ body:
     id: tamano
     attributes:
       label: Tamano (referencia = horas de Santiago con Claude Code)
-      description: XS ≤15 min · S ≤30 min · M ≤1 h · L ≤2 h · XL >2 h (sigue siendo un issue: decí las horas)
+      description: "XS ≤15 min · S ≤30 min · M ≤1 h · L ≤2 h · XL >2 h (sigue siendo un issue: decí las horas)"
       options: [XS, S, M, L, XL]
     validations:
       required: true
